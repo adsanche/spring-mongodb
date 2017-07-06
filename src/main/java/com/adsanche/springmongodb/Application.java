@@ -14,7 +14,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application implements CommandLineRunner {
 
     @Autowired
-    private IHeroRepository IHeroRepository;
+    private IHeroRepository heroRepository;
 
     public static void main(String[] args) {
 
@@ -24,9 +24,9 @@ public class Application implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
 
-        this.IHeroRepository.deleteAll();
+        this.heroRepository.deleteAll();
 
-        this.IHeroRepository.save(Hero.builder().heroName("Batman")
+        this.heroRepository.save(Hero.builder().heroName("Batman")
                 .city("Gotham City")
                 .identity(Person.builder().gender(GenderEnum.MR)
                         .firstName("Bruce")
@@ -34,7 +34,7 @@ public class Application implements CommandLineRunner {
                         .age(37).build())
                 .type(HeroTypeEnum.SUPERHERO).build());
 
-        this.IHeroRepository.save(Hero.builder().heroName("Harley Queen")
+        this.heroRepository.save(Hero.builder().heroName("Harley Queen")
                 .city("Gotham City")
                 .identity(Person.builder().gender(GenderEnum.MRS)
                         .firstName("Harleen")
@@ -42,7 +42,7 @@ public class Application implements CommandLineRunner {
                         .age(32).build())
                 .type(HeroTypeEnum.VILLAIN).build());
 
-        this.IHeroRepository.save(Hero.builder().heroName("Robin")
+        this.heroRepository.save(Hero.builder().heroName("Robin")
                 .city("Gotham City")
                 .identity(Person.builder().gender(GenderEnum.MR)
                         .firstName("Damian")
@@ -50,7 +50,7 @@ public class Application implements CommandLineRunner {
                         .age(22).build())
                 .type(HeroTypeEnum.SUPERHERO).build());
 
-        this.IHeroRepository.save(Hero.builder().heroName("Superman")
+        this.heroRepository.save(Hero.builder().heroName("Superman")
                 .city("Metropolis")
                 .identity(Person.builder().gender(GenderEnum.MR)
                         .firstName("Clark")
@@ -58,7 +58,7 @@ public class Application implements CommandLineRunner {
                         .age(32).build())
                 .type(HeroTypeEnum.SUPERHERO).build());
 
-        this.IHeroRepository.save(Hero.builder().heroName("Wonder Woman")
+        this.heroRepository.save(Hero.builder().heroName("Wonder Woman")
                 .city("Themyscira")
                 .identity(Person.builder().gender(GenderEnum.MRS)
                         .firstName("Diana")
@@ -66,7 +66,7 @@ public class Application implements CommandLineRunner {
                         .age(30).build())
                 .type(HeroTypeEnum.SUPERHERO).build());
 
-        this.IHeroRepository.save(Hero.builder().heroName("Mr. Freeze")
+        this.heroRepository.save(Hero.builder().heroName("Mr. Freeze")
                 .city("Gotham City")
                 .identity(Person.builder().gender(GenderEnum.MR)
                         .firstName("Victor")
@@ -74,7 +74,7 @@ public class Application implements CommandLineRunner {
                         .age(40).build())
                 .type(HeroTypeEnum.VILLAIN).build());
 
-        this.IHeroRepository.save(Hero.builder().heroName("Black Adam")
+        this.heroRepository.save(Hero.builder().heroName("Black Adam")
                 .city("Kahndaq")
                 .identity(Person.builder().gender(GenderEnum.MR)
                         .firstName("Theo")
@@ -82,7 +82,7 @@ public class Application implements CommandLineRunner {
                         .age(37).build())
                 .type(HeroTypeEnum.VILLAIN).build());
 
-        this.IHeroRepository.save(Hero.builder().heroName("Flash")
+        this.heroRepository.save(Hero.builder().heroName("Flash")
                 .city("Central City")
                 .identity(Person.builder().gender(GenderEnum.MR)
                         .firstName("Barry")
